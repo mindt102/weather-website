@@ -1,7 +1,5 @@
 const getWeather = async (address) => {
-    const response = await fetch(
-        `http://localhost:3000/weather?address=${address}`
-    );
+    const response = await fetch(`/weather?address=${address}`);
     const weatherData = await response.json();
     if (weatherData.error) {
         messageOne.textContent = weatherData.error;
