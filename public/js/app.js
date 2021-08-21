@@ -1,6 +1,7 @@
 const getWeather = async (address) => {
     try {
         const response = await fetch(`/weather?address=${address}`);
+        console.log(`response: ${response}`);
         const weatherData = await response.json();
         if (weatherData.error) {
             messageOne.textContent = weatherData.error;
