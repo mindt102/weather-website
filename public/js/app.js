@@ -4,10 +4,8 @@ const getWeather = async (address) => {
     );
     const weatherData = await response.json();
     if (weatherData.error) {
-        // console.log(weatherData.error);
         messageOne.textContent = weatherData.error;
     } else {
-        // console.log(weatherData.forecast, weatherData.location);
         messageTwo.textContent = weatherData.location;
         messageOne.textContent = weatherData.forecast;
     }
