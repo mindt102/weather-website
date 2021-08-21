@@ -62,7 +62,7 @@ app.get("/weather", (req, res) => {
     //     });
     // });
 
-    console.log(address);
+    res.json({ address });
 });
 
 app.get("/help/*", (req, res) => {
