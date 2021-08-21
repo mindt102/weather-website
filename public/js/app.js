@@ -1,11 +1,15 @@
 const getWeather = async (address) => {
-    const response = await fetch(`/weather?address=${address}`);
-    const weatherData = await response.json();
-    if (weatherData.error) {
-        messageOne.textContent = weatherData.error;
-    } else {
-        messageTwo.textContent = weatherData.location;
-        messageOne.textContent = weatherData.forecast;
+    try {
+        const response = await fetch(`/weather?address=${address}`);
+        const weatherData = await response.json();
+        if (weatherData.error) {
+            messageOne.textContent = weatherData.error;
+        } else {
+            messageTwo.textContent = weatherData.location;
+            messageOne.textContent = weatherData.forecast;
+        }
+    } catch (error) {
+        console.log(error);
     }
 };
 
