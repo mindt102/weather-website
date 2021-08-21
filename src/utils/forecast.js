@@ -13,10 +13,12 @@ const forecast = (longitude, latitude, callback) => {
             callback("Unable to find address", undefined);
         } else {
             const data = body.current;
-            const { temperature, feelslike, weather_descriptions } = data;
+            console.log(data);
+            const { temperature, feelslike, weather_descriptions, uv_index } =
+                data;
             callback(
                 undefined,
-                `${weather_descriptions[0]}. It is currently ${temperature} degrees out. It feels like ${feelslike} degrees out`
+                `${weather_descriptions[0]}. It is currently ${temperature} degrees out. It feels like ${feelslike} degrees out. The UV index is ${uv_index}`
             );
         }
     });
