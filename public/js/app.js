@@ -23,5 +23,9 @@ weatherForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const location = search.value;
     messageOne.textContent = "Loading...";
-    getWeather(location);
+    try {
+        getWeather(location);
+    } catch (error) {
+        console.log(`Error: ${error}`);
+    }
 });
