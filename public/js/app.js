@@ -10,7 +10,7 @@ const getWeather = async (address) => {
             messageOne.textContent = weatherData.forecast;
         }
     } catch (error) {
-        console.log(error);
+        console.log(`Error ${console.error();}`));
     }
 };
 
