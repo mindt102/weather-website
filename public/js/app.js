@@ -19,12 +19,13 @@ const search = document.querySelector("input");
 const messageOne = document.querySelector("#message-1");
 const messageTwo = document.querySelector("#message-2");
 
-weatherForm.addEventListener("submit", (e) => {
+weatherForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const location = search.value;
     messageOne.textContent = "Loading...";
     try {
-        getWeather(location);
+        const res = await getWeather(location);
+        console.log(`res: ${res}`);
     } catch (error) {
         console.log(`Error: ${error}`);
     }
