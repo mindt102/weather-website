@@ -23,22 +23,22 @@ app.use(express.static(publicDirectoryPath));
 app.get("/", (req, res) => {
     res.render("index", {
         title: "Weather App",
-        name: "Min D",
+        name: "mindt102",
     });
 });
 
 app.get("/about", (req, res) => {
     res.render("about", {
         title: "About me",
-        name: "Min D",
+        name: "mindt102",
     });
 });
 
 app.get("/help", (req, res) => {
     res.render("help", {
-        message: "Help me",
+        message: "Some useful text",
         title: "Help",
-        name: "Min D",
+        name: "mindt102",
     });
 });
 
@@ -66,7 +66,7 @@ app.get("/weather", (req, res) => {
 app.get("/help/*", (req, res) => {
     res.status(404).render("404", {
         message: "Help not found",
-        name: "Min D",
+        name: "mindt102",
         title: "404",
     });
 });
@@ -74,7 +74,7 @@ app.get("/help/*", (req, res) => {
 app.get("*", (req, res) => {
     res.status(404).render("404", {
         message: "Page Not Found",
-        name: "Min D",
+        name: "mindt102",
         title: "404",
     });
 });
